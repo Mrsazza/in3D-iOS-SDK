@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/I3DRecorder-Swift.h</key>
 		<data>
-		i7vd8RVc6QYIehGqH3kTRVTLf5E=
+		rJuReVf1+keQTvGgJOpWQvkOvwo=
 		</data>
 		<key>Headers/I3DRecorder.h</key>
 		<data>
@@ -18,31 +18,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fqSvC19yUVAr7aThHpqdrcz2sPo=
+		B4eFlpC59aqz9RZ7d0gzSYSVTNk=
 		</data>
 		<key>Modules/I3DRecorder.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		rRS5cI7VT66nHR1R9+Dv/f2WLao=
+		i9EuxVDHgqYxCtaSo/plv+IF3+g=
 		</data>
 		<key>Modules/I3DRecorder.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		3gJAxxnmJDir1QBDeNsQ2TrqMUM=
+		K0BMIHCbyfNk863ouXDga/8PQ3A=
 		</data>
 		<key>Modules/I3DRecorder.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		j7YIvvjWAFW3NAu5p53Y2ePUUv0=
+		MJ2hpbPqfxz1cGhPtdfQWk7OtPE=
 		</data>
 		<key>Modules/I3DRecorder.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		rRS5cI7VT66nHR1R9+Dv/f2WLao=
+		i9EuxVDHgqYxCtaSo/plv+IF3+g=
 		</data>
 		<key>Modules/I3DRecorder.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		3gJAxxnmJDir1QBDeNsQ2TrqMUM=
+		K0BMIHCbyfNk863ouXDga/8PQ3A=
 		</data>
 		<key>Modules/I3DRecorder.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		j7YIvvjWAFW3NAu5p53Y2ePUUv0=
+		MJ2hpbPqfxz1cGhPtdfQWk7OtPE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>default.metallib</key>
 		<data>
-		stGuYuF3IZEC3jjX7wShxYDJFb4=
+		+NvfwQcMuAkDhrGLYLVkLes9Tow=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -59,7 +59,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WOv4DWJgqBgghlmUEssztssacXU9CR8iLhxSoSnoYBw=
+			XDla3EcVxvTClZac4g57obkOQq5h3o22jWcRXnHkGYM=
 			</data>
 		</dict>
 		<key>Headers/I3DRecorder.h</key>
@@ -80,42 +80,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UFIOrDNI967cJ9jAlBWxXcZJqRDxDk98rcc3H9e80Wc=
+			mJbNaLS5y1ZH/r0lX3h6HQIf0CvVxXiVw17Mj84iO/E=
 			</data>
 		</dict>
 		<key>Modules/I3DRecorder.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YhmiGc4EEuHLhAv0LOnePYXbsxFsd2OXfWdB8a/gDjg=
+			gNiFRcqnbwi+RHa7c/jzjCsJiXhZeSMUQMcmlveqmpk=
 			</data>
 		</dict>
 		<key>Modules/I3DRecorder.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			29uzgOaKSIZWQ8zjJKPgawmwRxlEmR+hM89Fy4+4o0Y=
+			Ai/NLqrdbCQVHwA+Ls2j+jztW6J3RntdzKh8mlDlJew=
 			</data>
 		</dict>
 		<key>Modules/I3DRecorder.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UFIOrDNI967cJ9jAlBWxXcZJqRDxDk98rcc3H9e80Wc=
+			mJbNaLS5y1ZH/r0lX3h6HQIf0CvVxXiVw17Mj84iO/E=
 			</data>
 		</dict>
 		<key>Modules/I3DRecorder.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YhmiGc4EEuHLhAv0LOnePYXbsxFsd2OXfWdB8a/gDjg=
+			gNiFRcqnbwi+RHa7c/jzjCsJiXhZeSMUQMcmlveqmpk=
 			</data>
 		</dict>
 		<key>Modules/I3DRecorder.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			29uzgOaKSIZWQ8zjJKPgawmwRxlEmR+hM89Fy4+4o0Y=
+			Ai/NLqrdbCQVHwA+Ls2j+jztW6J3RntdzKh8mlDlJew=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -129,7 +129,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oku52C8C7MAHAPBcuBHlLOTCtmCKB2AeXi2vhYsoBss=
+			SjADM/L53dJFn4YTIACudIvaO5yqBmOOS3ONOWtSE8E=
 			</data>
 		</dict>
 	</dict>
