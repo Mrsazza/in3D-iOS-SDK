@@ -181,7 +181,7 @@ Accept-Encoding: gzip, deflate
 Connection: Keep-Alive
 
 {
-    vendor_id: string,
+    config_name: string,
     callback_url: string
 }
 
