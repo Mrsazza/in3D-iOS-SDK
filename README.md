@@ -181,7 +181,7 @@ Accept-Encoding: gzip, deflate
 Connection: Keep-Alive
 
 {
-    config_name: string,
+    config_name: string, // Optional. If not specified, then default configuration will be used. Contact us for valid configuration names for your company.
     callback_url: string
 }
 
