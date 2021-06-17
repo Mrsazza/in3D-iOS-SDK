@@ -22,7 +22,11 @@ class BottomFilter: NSObject, ImageFilter {
     var shouldDetectBottom = false
     let fps = 1
     
-    func process(rgb: CVPixelBuffer, depth: CVPixelBuffer, attachments: Attachments) {
+    func process(rgb: CVPixelBuffer?, depth: CVPixelBuffer?, attachments: Attachments) {
+        guard let depth = depth else {
+            return
+        }
+        
         guard shouldDetectBottom else {
             return
         }

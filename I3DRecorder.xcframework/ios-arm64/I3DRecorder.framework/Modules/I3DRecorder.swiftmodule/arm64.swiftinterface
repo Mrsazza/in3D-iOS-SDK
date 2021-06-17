@@ -24,7 +24,8 @@ public protocol ScanRecording : AnyObject {
   var baseURL: Foundation.URL { get }
   var archiveURL: Foundation.URL { get }
   var headSequence: I3DRecorder.ScanSequence? { get }
-  var bodySequence: I3DRecorder.ScanSequence { get }
+  var bodySequence: I3DRecorder.ScanSequence? { get }
+  var sequnces: [I3DRecorder.ScanSequence] { get }
 }
 public enum ScanRecordingStatus : Swift.String, Swift.Codable {
   case inited
@@ -83,6 +84,7 @@ public protocol ScanService {
   func upload(recording: Swift.String, progress: @escaping (Swift.Double, Swift.Int64) -> (), completion: @escaping (I3DRecorder.Scan?, Swift.Error?) -> ())
   func launchScanProcessing(with scanID: Swift.String, completion: @escaping (I3DRecorder.Scan?, Swift.Error?) -> ())
   func newRecording(withHead: Swift.Bool) -> I3DRecorder.ScanRecording
+  func newRecording(of types: [I3DRecorder.ScanSequenceType]) -> I3DRecorder.ScanRecording
   func delete(recording: Swift.String) throws
   func isLocalScan(with id: Swift.String) -> Swift.Bool
   func recording(with scanID: Swift.String) -> I3DRecorder.ScanRecording?
@@ -102,6 +104,7 @@ extension I3DScanService : I3DRecorder.ScanService {
     get
   }
   public func newRecording(withHead: Swift.Bool) -> I3DRecorder.ScanRecording
+  public func newRecording(of types: [I3DRecorder.ScanSequenceType]) -> I3DRecorder.ScanRecording
   public func recording(with scanID: Swift.String) -> I3DRecorder.ScanRecording?
   public func isLocalScan(with id: Swift.String) -> Swift.Bool
   public func launchScanProcessing(with id: Swift.String, completion: @escaping (I3DRecorder.Scan?, Swift.Error?) -> ())
@@ -143,14 +146,20 @@ public struct AccelerometerData : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public enum ScanSequenceType : Swift.String {
+public enum ScanSequenceType {
   case body
   case head
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
+  case custom(Swift.String)
+}
+extension ScanSequenceType {
   public var rawValue: Swift.String {
     get
   }
+  public init(rawValue: Swift.String)
+}
+extension ScanSequenceType : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public protocol ScanSequence {
   var type: I3DRecorder.ScanSequenceType { get }
@@ -237,9 +246,6 @@ extension I3DRecorder.ScanStatus : Swift.Hashable {}
 extension I3DRecorder.ScanStatus : Swift.RawRepresentable {}
 extension I3DRecorder.CameraType : Swift.Equatable {}
 extension I3DRecorder.CameraType : Swift.Hashable {}
-extension I3DRecorder.ScanSequenceType : Swift.Equatable {}
-extension I3DRecorder.ScanSequenceType : Swift.Hashable {}
-extension I3DRecorder.ScanSequenceType : Swift.RawRepresentable {}
 extension I3DRecorder.I3DRecordInitError : Swift.Equatable {}
 extension I3DRecorder.I3DRecordInitError : Swift.Hashable {}
 extension I3DRecorder.I3DRecordError : Swift.Equatable {}

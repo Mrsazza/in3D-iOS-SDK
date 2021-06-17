@@ -141,7 +141,7 @@ class ScannerCoordinator: NSObject, ScannerCoordination {
             currentHeight = height
         }
         
-        let recorder = ScanRecorder(sequence: recording.bodySequence, height: currentHeight)
+        let recorder = ScanRecorder(sequence: recording.bodySequence!, height: currentHeight)
         
         let settings: RecorderSettings
         let cameraType = CameraType.trueDepth
@@ -177,7 +177,7 @@ class ScannerCoordinator: NSObject, ScannerCoordination {
         DispatchQueue.main.async { [unowned self] in
             self.navigationController.setNavigationBarHidden(true, animated: true)
             
-            let vm = DefaultReviewViewModel(coordinator: self, video: recording.bodySequence.rgb)
+            let vm = DefaultReviewViewModel(coordinator: self, video: recording.bodySequence!.rgb)
             vm.onApprove = { [unowned self] in
                 self.showUpload()
             }

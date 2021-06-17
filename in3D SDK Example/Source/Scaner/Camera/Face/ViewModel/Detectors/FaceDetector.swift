@@ -93,7 +93,11 @@ extension FaceDetector: ImageFilter {
         return 2
     }
     
-    func process(rgb: CVPixelBuffer, depth: CVPixelBuffer, attachments: Attachments) {
+    func process(rgb: CVPixelBuffer?, depth: CVPixelBuffer?, attachments: Attachments) {
+        guard let rgb = rgb, let depth = depth else {
+            return
+        }
+        
         if shouldDetect {
             detectFace(in: rgb, with: attachments.intrinsic, and: depth)
         }
