@@ -63,7 +63,6 @@ class BaseCameraViewController: UIViewController {
     var viewModel: CameraViewModel!
     var canStartConnecting = true
     let disposeBag = DisposeBag()
-    var previewLayer: AVCaptureVideoPreviewLayer?
     
     // MARK: - Init
     init(viewModel: CameraViewModel) {
@@ -82,11 +81,6 @@ class BaseCameraViewController: UIViewController {
         setupNavBar()
         layoutViews()
         setupActions()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
