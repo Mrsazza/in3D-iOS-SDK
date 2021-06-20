@@ -8,5 +8,6 @@ target 'in3D SDK Example' do
   # Pods for in3D SDK Example
   pod 'RxCocoa'
   pod 'RxSwift'
+  pod 'I3DRecorder', :path => '../'
 
 end

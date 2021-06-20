@@ -3,13 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		67966D4125DEF0CB007DD400 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67966D3F25DEF0CB007DD400 /* URLRequest.swift */; };
-		67966D4725DEF4B9007DD400 /* I3DRecorder.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724113A25DDB51B00D1CC77 /* I3DRecorder.xcframework */; };
-		67966D4825DEF4B9007DD400 /* I3DRecorder.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6724113A25DDB51B00D1CC77 /* I3DRecorder.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFA89AA3FB0D1083425678B1 /* Pods_in3D_SDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372C4F19AD8FEA60EDC22C37 /* Pods_in3D_SDK_Example.framework */; };
 		F51A2FB5257134BF000FE4B7 /* BodyTutorialVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A2F66257134BF000FE4B7 /* BodyTutorialVM.swift */; };
 		F51A2FB6257134BF000FE4B7 /* HeadTutorialVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51A2F67257134BF000FE4B7 /* HeadTutorialVM.swift */; };
@@ -104,20 +102,6 @@
 		F5F1AB3B257041C800DE26DD /* wipe.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5F1AB35257041C800DE26DD /* wipe.gif */; };
 		F5F1AB3C257041C800DE26DD /* Instruction.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F5F1AB36257041C800DE26DD /* Instruction.mp4 */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F58A661C25780ACA000BE97E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				67966D4825DEF4B9007DD400 /* I3DRecorder.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		372C4F19AD8FEA60EDC22C37 /* Pods_in3D_SDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_in3D_SDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,7 +210,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67966D4725DEF4B9007DD400 /* I3DRecorder.xcframework in Frameworks */,
 				CFA89AA3FB0D1083425678B1 /* Pods_in3D_SDK_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,7 +846,6 @@
 				F5F1AA73257040E400DE26DD /* Frameworks */,
 				F5F1AA74257040E400DE26DD /* Resources */,
 				162F1B0C7C5A8624C7280D39 /* [CP] Embed Pods Frameworks */,
-				F58A661C25780ACA000BE97E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
