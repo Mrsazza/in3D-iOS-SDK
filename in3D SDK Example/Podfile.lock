@@ -1,5 +1,5 @@
 PODS:
-  - I3DRecorder (1.0.4)
+  - I3DRecorder (1.0.5)
   - RxCocoa (6.2.0):
     - RxRelay (= 6.2.0)
     - RxSwift (= 6.2.0)
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  I3DRecorder: 084a0bb80e93ccdd30851406a08b8d6c736278a4
+  I3DRecorder: 2ca5e84a0d11b9c74e929c797206bc316b5ec327
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f

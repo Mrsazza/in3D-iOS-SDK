@@ -77,7 +77,13 @@ extension ScanStatus : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public protocol ScanServiceDelegate : AnyObject {
+  var endpoint: Swift.String? { get }
   func createScan(for recording: I3DRecorder.ScanRecording, completion: @escaping (Swift.String?) -> ())
+}
+extension ScanServiceDelegate {
+  public var endpoint: Swift.String? {
+    get
+  }
 }
 public protocol ScanService {
   func recorded(recording: I3DRecorder.ScanRecording) throws
@@ -93,7 +99,10 @@ public protocol ScanService {
   var delegate: I3DRecorder.ScanServiceDelegate? { get set }
 }
 @objc @_inheritsConvenienceInitializers public class I3DScanService : ObjectiveC.NSObject {
-  weak public var delegate: I3DRecorder.ScanServiceDelegate?
+  weak public var delegate: I3DRecorder.ScanServiceDelegate? {
+    get
+    set
+  }
   @objc override dynamic public init()
   @objc deinit
 }
@@ -214,6 +223,7 @@ public protocol Recorder : AnyObject {
   func canUse(camera type: I3DRecorder.CameraType, for sequenceType: I3DRecorder.ScanSequenceType) -> Swift.Bool
   func availableCameras(for sequenceType: I3DRecorder.ScanSequenceType) -> [I3DRecorder.CameraType]
   var delegate: I3DRecorder.RecorderDelegate? { get set }
+  var selector: I3DRecorder.RecorderFrameSelector? { get set }
   var previewView: MetalKit.MTKView? { get set }
   func prepareForRecord(with settings: I3DRecorder.RecorderSettings, imageFilter: I3DRecorder.ImageFilter?, sensorFilter: I3DRecorder.SensorFilter?, completion: @escaping ((Swift.Error?) -> ()))
   func startRecord()
@@ -222,6 +232,7 @@ public protocol Recorder : AnyObject {
 }
 @objc public class ScanRecorder : ObjectiveC.NSObject {
   weak public var delegate: I3DRecorder.RecorderDelegate?
+  weak public var selector: I3DRecorder.RecorderFrameSelector?
   weak public var previewView: MetalKit.MTKView?
   public init(sequence: I3DRecorder.ScanSequence, height: Swift.Int)
   @objc override dynamic public init()
@@ -237,6 +248,9 @@ extension ScanRecorder : I3DRecorder.Recorder {
 }
 public protocol RecorderDelegate : AnyObject {
   func recorder(changed state: I3DRecorder.RecordState)
+}
+public protocol RecorderFrameSelector : AnyObject {
+  func shouldStore(rgb: CoreVideo.CVPixelBuffer?, depth: CoreVideo.CVPixelBuffer?, attachments: I3DRecorder.Attachments, completion: @escaping ((CoreVideo.CVPixelBuffer?, CoreVideo.CVPixelBuffer?, I3DRecorder.Attachments?) -> Swift.Void))
 }
 extension I3DRecorder.ScanRecordingStatus : Swift.Equatable {}
 extension I3DRecorder.ScanRecordingStatus : Swift.Hashable {}
