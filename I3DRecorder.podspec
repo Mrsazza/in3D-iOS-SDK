@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'I3DRecorder'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'in3D iOS SDK for 3D body model creation.'
  
   s.description      = <<-DESC

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name I3DRecorder
 import ARKit
 import AVFoundation
@@ -195,6 +195,20 @@ public enum I3DRecordError : Swift.Error {
   public var hashValue: Swift.Int {
     get
   }
+}
+public enum ScanError : Swift.Error {
+  case uploadFailed
+  case uploadStartFailed
+  case uploadDoneFailed
+  case runFailed
+  case etagMissing
+  case unknownRecording
+  case incorrectRecording
+  case recordingAlreadyUploaded
+  case archiveFail
+  case scanNotInited
+  case serverError(Swift.Int, Swift.String)
+  case couldntDecode(Swift.String)
 }
 public struct Attachments {
   public let timestamp: Foundation.TimeInterval
