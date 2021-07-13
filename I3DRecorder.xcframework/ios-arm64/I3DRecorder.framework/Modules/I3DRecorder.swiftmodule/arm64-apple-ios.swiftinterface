@@ -97,13 +97,18 @@ public protocol ScanService {
   var notLoadedRecordings: [I3DRecorder.ScanRecording] { get }
   func clearCache()
   var delegate: I3DRecorder.ScanServiceDelegate? { get set }
+  var backgroundCompletionHandler: (() -> Swift.Void)? { get set }
 }
-@objc @_inheritsConvenienceInitializers public class I3DScanService : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class I3DScanService : ObjectiveC.NSObject {
+  public static let shared: I3DRecorder.I3DScanService
   weak public var delegate: I3DRecorder.ScanServiceDelegate? {
     get
     set
   }
-  @objc override dynamic public init()
+  public var backgroundCompletionHandler: (() -> Swift.Void)? {
+    get
+    set
+  }
   @objc deinit
 }
 extension I3DScanService : I3DRecorder.ScanService {

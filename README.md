@@ -84,6 +84,7 @@ public protocol Recorder: class {
 
 Next steps describe how to set up `Recorder` and use it:
 
+- Init `Recorder` as instance of `ScanRecorder`. One of the init parameters is `height`, that is user's height. *IMPORTANT* `Height` should be set in *centimeters*.
 - After initialization you need to set a delegate property. Delegate receives the recorder's state updates.
 
 ```swift
@@ -110,6 +111,7 @@ You should use `ScanService` to upload your `ScanRecording`.
 
 public protocol ScanService {
 
+    var backgroundCompletionHandler: (() -> Void)? { get set }
     var delegate: ScanServiceDelegate? { get set } 
     var notLoadedRecordings: [ScanRecording] { get }   
     func recorded(recording: ScanRecording) throws
@@ -128,6 +130,16 @@ public protocol ScanService {
 ```
 
 Here how you use it:
+
+- Add the code below to your `AppDelegate`. If you already have some background upload/download in your app, then check session identifier. SDK's session identifier: `com.gsize.background.scanRequest`.
+
+```
+func application(_ application: UIApplication,
+                 handleEventsForBackgroundURLSession identifier: String,
+                 completionHandler: @escaping () -> Void) {
+    I3DScanService.shared.backgroundCompletionHandler = completionHandler
+}
+```
 
 - Set delegate property
 
