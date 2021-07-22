@@ -29,9 +29,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // MARK: - Private methods
     private func setupDependencies() {
-        let scanService = I3DScanService()
+		let scanService = I3DScanService.shared
         
-        container = DependancyContainerImpl(scanService: scanService)
+		container = DependancyContainerImpl(scanService: scanService)
     }
 
 }

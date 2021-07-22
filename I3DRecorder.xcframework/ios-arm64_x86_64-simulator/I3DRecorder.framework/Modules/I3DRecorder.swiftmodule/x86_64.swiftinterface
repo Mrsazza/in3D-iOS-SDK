@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name I3DRecorder
 import ARKit
 import AVFoundation
@@ -34,15 +34,15 @@ public enum ScanRecordingStatus : Swift.String, Swift.Codable {
   case uploaded
   case serverInformed
   case launched
-  public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
   public var rawValue: Swift.String {
     get
   }
 }
 public struct GyroscopeData : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct Scan : Swift.Codable {
   public let id: Swift.String
@@ -66,8 +66,8 @@ public enum ScanStatus : Swift.String {
   case calcProcessing
   case calcOk
   case calcFailure
-  public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
   public var rawValue: Swift.String {
     get
   }
@@ -136,10 +136,10 @@ public enum CameraType {
   case rgbBack
   case rgbFront
   public static func == (a: I3DRecorder.CameraType, b: I3DRecorder.CameraType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 public protocol RecorderSettings {
   var cameraType: I3DRecorder.CameraType { get }
@@ -149,16 +149,16 @@ public struct I3DRecorderSettings : I3DRecorder.RecorderSettings {
   public init(cameraType: I3DRecorder.CameraType)
 }
 public struct ThermalData : Swift.Codable {
-  public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public struct AccelerometerData : Swift.Codable {
   public var x: Swift.Double
   public var y: Swift.Double
   public var z: Swift.Double
   public var timestamp: Swift.Double
-  public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public enum ScanSequenceType {
   case body
@@ -185,10 +185,10 @@ public enum I3DRecordInitError : Swift.Error {
   case cameraAccessDenied
   case cameraAccessRestricted
   public static func == (a: I3DRecorder.I3DRecordInitError, b: I3DRecorder.I3DRecordInitError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum I3DRecordError : Swift.Error {
   case rgbRecordError
@@ -196,10 +196,10 @@ public enum I3DRecordError : Swift.Error {
   case recordError
   case archiveError
   public static func == (a: I3DRecorder.I3DRecordError, b: I3DRecorder.I3DRecordError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum ScanError : Swift.Error {
   case uploadFailed
@@ -224,10 +224,10 @@ public enum RecordState {
   case scanning
   case finished
   public static func == (a: I3DRecorder.RecordState, b: I3DRecorder.RecordState) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 public protocol ImageFilter {
   var fps: Swift.Int { get }
@@ -254,8 +254,8 @@ public protocol Recorder : AnyObject {
   weak public var selector: I3DRecorder.RecorderFrameSelector?
   weak public var previewView: MetalKit.MTKView?
   public init(sequence: I3DRecorder.ScanSequence, height: Swift.Int)
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
 extension ScanRecorder : I3DRecorder.Recorder {
   public func canUse(camera type: I3DRecorder.CameraType, for sequenceType: I3DRecorder.ScanSequenceType) -> Swift.Bool
